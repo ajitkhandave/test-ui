@@ -1,0 +1,16 @@
+@import '../../../assets/style/variable.scss';
+
+.employee-feedback-list-component-wrapper {
+    margin-top: 30px;
+    .employee-feedback-list-table {
+        .edit-icon {
+            color: $primary-blue;
+            cursor: pointer;
+        }
+        .delete-icon {
+            color: $primary-red;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    }
+}

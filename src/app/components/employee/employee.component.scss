@@ -1,0 +1,16 @@
+@import '../../../assets/style/variable.scss';
+
+.employee-componet-wrapper {
+  margin: 20px 0;
+  padding: 20px;
+}
+.tab-container {
+  margin-top: 20px;
+
+  .nav-tabs {
+    cursor: pointer;
+    .nav-item.active {
+      border-bottom: 1px solid $primary-blue;
+    }
+  }
+}

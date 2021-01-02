@@ -1,0 +1,32 @@
+<div class="employee-form-component-wrapper">
+  <div class="employee-from-block col-4">
+    <form [formGroup]="employeeForm" class="address-book-form">
+      <div class="form-group">
+        <label class="address-form-label" for="name">Name</label>
+        <input type="text" id="name" class="form-control address-form-input" formControlName="name" aria-describedby="name" placeholder="Enter name" [readonly]="true">
+      </div>
+      <div class="form-group">
+        <label class="address-form-label" for="empID">Emp Id</label>
+        <input type="text" id="empID" class="form-control address-form-input" formControlName="empID" aria-describedby="empID" placeholder="Enter employee ID" [readonly]="true">
+      </div>
+      <div class="form-group state-block">
+        <label class="address-form-label">Project</label>
+        <div class="address-form-select-state">
+          <select class="state-dropdown form-control" formControlName="project">
+            <option [ngValue]="null" disabled>Select Project</option>
+            <option [ngValue]="project" *ngFor="let project of projectList">{{project}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <app-star-rating [stars]="stars" [selectedValue]="selectedRating" (selectedStar)="countStar($event)"></app-star-rating>
+      </div>
+      <div class="form-group">
+        <label class="address-form-label" for="empID">Comments</label>
+        <textarea type="text" id="comment" class="form-control address-form-input" formControlName="comment" aria-describedby="comment" placeholder="Enter comment"></textarea>
+      </div>
+      <button type="submit" class="btn btn-outline-secondary mr-2" (click)="clearForm()">Cancel</button>
+      <button type="submit" class="btn btn-primary" (click)="submit()" [disabled]="employeeForm.invalid">Submit</button>
+    </form>
+  </div>
+</div>

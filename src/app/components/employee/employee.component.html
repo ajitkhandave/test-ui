@@ -1,0 +1,15 @@
+<div class="employee-componet-wrapper container-fluid">
+ <h4>Welcome <span capitalizeLetter>{{user}}</span></h4>
+  <div class="tab-container">
+    <ul class="nav nav-tabs card-header-tabs" role="tablist">
+      <li class="nav-item" [ngClass]="{'active': showForm}" (click)="tabCliked()">
+        <a class="nav-link">New Feedback</a>
+      </li>
+      <li class="nav-item" [ngClass]="{'active': !showForm}" (click)="tabCliked()">
+        <a class="nav-link">List</a>
+      </li>
+    </ul>
+  </div>
+  <app-employee-form [currentProject]="currentProject" [editable]="isEdit" (showList)="showList($event)" *ngIf="showForm"></app-employee-form>
+  <app-employee-feeback-list (editProjectDetail)="editProductDetail($event)" *ngIf="!showForm"></app-employee-feeback-list>
+</div>

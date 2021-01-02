@@ -1,0 +1,23 @@
+<div class="employee-feedback-list-component-wrapper">
+  <table class="table employee-feedback-list-table">
+    <thead>
+      <tr>
+        <th scope="col">Project Name</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Comments</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projectList">
+        <td>{{project.name}}</td>
+        <td>
+          <app-star-rating [stars]="stars" [selectedValue]="project.rating"></app-star-rating>
+        </td>
+        <td>{{project.comments}}</td>
+        <td><i class="fas fa-trash delete-icon" (click)="deleteProject(project)"></i><i class="fas fa-pen edit-icon" (click)="editProject(project)"></i></td>
+      </tr>
+    </tbody>
+  </table>
+  <span *ngIf="projectList.length === 0">No Feddback present for project</span>
+</div>
